@@ -1,0 +1,14 @@
+/* Smooth and snappy like GYEON */
+html.snap-y {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.snap-child {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Full-viewport units that behave on mobile address bars */
+:root { --vh: 1vh; } /* fallback if you want */
+html, body, #redwood-app { height: 100%; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; }
