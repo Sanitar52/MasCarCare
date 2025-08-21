@@ -17,6 +17,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu'
 import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import FooterLayout from '../FooterLayout/FooterLayout'
 
 type NavbarLayoutProps = { children?: React.ReactNode }
 
@@ -184,6 +185,8 @@ const NavbarLayout = ({ children }: NavbarLayoutProps) => {
 
       {/* NOTE: no spacer — navbar overlays content on ALL pages */}
       <main>{children}</main>
+
+      <FooterLayout />
     </>
   )
 }
