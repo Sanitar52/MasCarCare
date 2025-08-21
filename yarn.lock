@@ -3501,6 +3501,48 @@
     graphql "16.9.0"
     typescript "5.6.2"
 
+"@redwoodjs/babel-config@8.8.1":
+  version "8.8.1"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/babel-config/-/babel-config-8.8.1.tgz#dd3b65a683c8a07f6d33cf8ee01fb81fb711d4c9"
+  integrity sha512-ad473+ys0HA2DGFtrC4TB7ktWCMEI5+P5FPUZ/yUoacJBWeDt3n5BGuND7Vus3iXd4vpGNrIvOjl1JCgz3zkdQ==
+  dependencies:
+    "@babel/core" "^7.26.10"
+    "@babel/parser" "7.26.10"
+    "@babel/plugin-transform-class-properties" "7.25.9"
+    "@babel/plugin-transform-private-methods" "7.25.9"
+    "@babel/plugin-transform-private-property-in-object" "7.25.9"
+    "@babel/plugin-transform-react-jsx" "7.25.9"
+    "@babel/plugin-transform-runtime" "7.26.10"
+    "@babel/preset-env" "7.26.9"
+    "@babel/preset-react" "7.26.3"
+    "@babel/preset-typescript" "7.26.0"
+    "@babel/register" "7.25.9"
+    "@babel/runtime-corejs3" "7.26.10"
+    "@babel/traverse" "7.26.10"
+    "@redwoodjs/project-config" "8.8.1"
+    babel-plugin-auto-import "1.1.0"
+    babel-plugin-graphql-tag "3.3.0"
+    babel-plugin-module-resolver "5.0.2"
+    core-js "3.38.1"
+    fast-glob "3.3.2"
+    graphql "16.9.0"
+    typescript "5.6.2"
+
+"@redwoodjs/cli-data-migrate@^8.8.1":
+  version "8.8.1"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/cli-data-migrate/-/cli-data-migrate-8.8.1.tgz#e661c8c85ed06cc55a28ed689b1540af12922f2c"
+  integrity sha512-E4OMCgCQwJlhLJX5ZLyP41RVFffAElZVtv/h+eccz6Kwhh7eCgazrYIPWlpbKtFN5FokAQlARlpPrJL+tFkEIQ==
+  dependencies:
+    "@redwoodjs/babel-config" "8.8.1"
+    "@redwoodjs/project-config" "8.8.1"
+    chalk "4.1.2"
+    dotenv-defaults "5.0.2"
+    execa "5.1.1"
+    fs-extra "11.2.0"
+    listr2 "7.0.2"
+    terminal-link "2.1.1"
+    yargs "17.7.2"
+
 "@redwoodjs/cli-helpers@8.8.0":
   version "8.8.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/cli-helpers/-/cli-helpers-8.8.0.tgz#cd708041acf680633def81b817c2ee306d62b8f6"
@@ -3766,6 +3808,16 @@
   version "8.8.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/project-config/-/project-config-8.8.0.tgz#e1e5897ae0448ce9e315ee816ba547050ae25cdc"
   integrity sha512-NDSX3buWyGbrDFKmleMfJsbZ/KItwSAzipkcEy83SeHiamE5FnRGDtzEBBM2hAIwDzoJNzCHOd+ixCEiiYKbcQ==
+  dependencies:
+    deepmerge "4.3.1"
+    fast-glob "3.3.2"
+    smol-toml "1.3.1"
+    string-env-interpolation "1.0.1"
+
+"@redwoodjs/project-config@8.8.1":
+  version "8.8.1"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/project-config/-/project-config-8.8.1.tgz#1513a44ed2450c443b96cd6cd1c67e046cf26f7b"
+  integrity sha512-qwr8xnFPpATVhwHZkKl1l6UBr2zEwSHqljNkbUyVfqJEDwu2JWJakdPmKfBxShPxH/RdG38bDzs4vOLGbz/VBw==
   dependencies:
     deepmerge "4.3.1"
     fast-glob "3.3.2"

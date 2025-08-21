@@ -19,5 +19,8 @@
   },
   "prisma": {
     "seed": "yarn rw exec seed"
+  },
+  "dependencies": {
+    "@redwoodjs/cli-data-migrate": "^8.8.1"
   }
 }
