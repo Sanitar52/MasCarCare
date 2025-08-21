@@ -26,5 +26,17 @@
     "@redwoodjs/vite": "8.8.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19"
+  },
+  "eslintConfig": {
+    "extends": "@redwoodjs/eslint-config",
+    "root": true
+  },
+  "tsconfig": "*",
+  "eslint-config-custom": "*",
+  "engines": {
+    "node": "=20.x"
+  },
+  "prisma": {
+    "seed": "yarn rw exec seed"
   }
 }
