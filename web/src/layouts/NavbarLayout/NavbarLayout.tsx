@@ -22,12 +22,11 @@ type NavbarLayoutProps = { children?: React.ReactNode }
 
 // Use plain paths (works even if route helpers aren’t defined yet)
 const NAV = [
-  { label: 'ABOUT GYEON', to: '/about' },
-  { label: 'PRODUCTS', to: '/products' },
-  { label: 'EXPERIENCE CENTER', to: '/technology' }, // adjust when you add a page
-  { label: 'PARTNERSHIPS', to: '/technology' },       // adjust when you add a page
-  { label: 'NETWORK', to: '/technology' },            // adjust when you add a page
-  { label: 'CONTACT US', to: '/contact' },
+  { label: 'HAKKIMIZDA', to: '/about' },
+  { label: 'ÜRÜNLER', to: '/products' },
+  { label: 'ORTAKLIKLAR', to: '/technology' },       // adjust when you add a page
+  { label: 'BİZE ULAŞIN', to: '/contact' },
+  { label: 'BLOG', to: '/contact' },
 ]
 
 function useScrolled(threshold = 10) {
@@ -64,7 +63,6 @@ const NavbarLayout = ({ children }: NavbarLayoutProps) => {
         sx={{
           bgcolor: bg,
           color: text,
-          borderBottom: hairline,
           transition: 'all 200ms ease',
           boxShadow: solid ? '0 6px 18px rgba(0,0,0,0.06)' : 'none',
           // Subtle dark gradient INSIDE the bar only when transparent (for readability over media)
@@ -81,85 +79,61 @@ const NavbarLayout = ({ children }: NavbarLayoutProps) => {
       >
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Toolbar disableGutters sx={{ minHeight: APPBAR_HEIGHT }}>
-            {/* Brand */}
+            {/* Brand — pinned left */}
+            
             <Button
               component={Link}
               to="/"
               sx={{
                 px: 0,
-                mr: 3,
+                mr: 20,
                 fontSize: 24,
                 fontWeight: 800,
                 letterSpacing: '.02em',
                 color: 'inherit',
-                '&:hover': { background: 'transparent', opacity: 0.9 },
+                '&:hover': { background: 'transparent', opacity: 0.7 },
               }}
             >
-              GYEON
+              MasCarcare
             </Button>
 
-            {/* Desktop nav */}
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2, alignItems: 'center', flexGrow: 1 }}>
-              {NAV.map((item) => {
-                const active = pathname === item.to
-                return (
-                  <Button
-                    key={item.label}
-                    component={Link}
-                    to={item.to}
-                    color="inherit"
-                    sx={{
-                      position: 'relative',
-                      fontWeight: 700,
-                      letterSpacing: '.06em',
-                      fontSize: 13,
-                      '&::after': {
-                        content: '""',
-                        position: 'absolute',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        bottom: 6,
-                        width: active ? 36 : 0,
-                        height: 3,
-                        borderRadius: 3,
-                        backgroundColor: ACCENT_TOP,
-                        transition: 'width .2s ease',
-                      },
-                      '&:hover::after': { width: 36 },
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                )
-              })}
+            {/* Spacer pushes nav to the right on desktop */}
+            
+
+            {/* Desktop nav — no flexGrow here */}
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2, alignItems: 'center' }}>
+              {NAV.map((item) => (
+                <Button
+                  key={item.label}
+                  component={Link}
+                  to={item.to}
+                  color="inherit"
+                  sx={{
+                    position: 'relative',
+                    fontWeight: 700,
+                    letterSpacing: '.06em',
+                    fontSize: 13,
+                    '&::after': {
+                      content: '""',
+                      position: 'absolute',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      bottom: 6,
+                      width: pathname === item.to ? 36 : 0,
+                      height: 3,
+                      borderRadius: 3,
+                      backgroundColor: ACCENT_TOP,
+                      transition: 'width .2s ease',
+                    },
+                    '&:hover::after': { width: 36 },
+                  }}
+                >
+                  {item.label}
+                </Button>
+              ))}
             </Box>
 
-            {/* Right cluster */}
-            <Stack direction="row" spacing={1.5} alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <Stack direction="row" spacing={1} alignItems="center" sx={{ opacity: 0.9 }}>
-                <PublicOutlinedIcon fontSize="small" />
-                <Typography variant="body2" sx={{ fontWeight: 700, letterSpacing: '.06em' }}>
-                  GYEON GLOBAL
-                </Typography>
-                <ExpandMoreIcon fontSize="small" />
-              </Stack>
-              <Button
-                component={Link}
-                to="/products"
-                variant="contained"
-                sx={{
-                  color: '#fff',
-                  bgcolor: solid ? '#0F172A' : 'rgba(255,255,255,0.18)',
-                  backdropFilter: solid ? 'none' : 'blur(6px)',
-                  boxShadow: solid ? '0 8px 18px rgba(0,0,0,0.12)' : '0 8px 18px rgba(0,0,0,0.20)',
-                  '&:hover': { bgcolor: solid ? '#0B1220' : 'rgba(255,255,255,0.26)' },
-                }}
-              >
-                SHOP
-              </Button>
-            </Stack>
-
-            {/* Mobile hamburger */}
+            {/* Mobile hamburger — stays on the far right */}
             <Box sx={{ display: { xs: 'flex', md: 'none' }, ml: 'auto' }}>
               <IconButton onClick={toggle(true)} aria-label="menu" sx={{ color: 'inherit' }}>
                 <MenuIcon />
