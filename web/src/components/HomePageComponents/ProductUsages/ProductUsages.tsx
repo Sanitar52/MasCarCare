@@ -4,35 +4,16 @@ import Reveal from "src/components/Reveal"
 
 const products = [
 	{
-		title: "Q2 SERAMİK KAPLAMALAR",
+		title: "DPF, BPF, KATALİZÖR, EGR, TURBO, MANİFOLD TEMİZLEYİCİ 68334",
 		description:
-			"Gelişmiş seramik bazlı ürünlerden oluşan kapsamlı bir seri. Q2 serisi, hem meraklılar hem de profesyonel detaycılar için yüksek teknoloji kaplamalar sunar.",
-		image: "/q2-ceramic.webp", // örnek görsel yolu, kendi görsellerinizi ekleyin
+			"Turboşarz'lı ve turboşarz'sız tüm benzinli, lpg'li ve dizel motorlarda güvenle kullanılır.",
+		image: "/asd.png", // örnek görsel yolu, kendi görsellerinizi ekleyin
 		button: {
-			label: "KAPLAMA KOLEKSİYONU",
+			label: "ÜRÜNÜ KEŞFET",
 			to: "/products/q2-ceramic",
 		},
-	},
-	{
-		title: "Q2 MOHS KAPLAMA",
-		description:
-			"Yüzey korumasında üstün performans ve dayanıklılık. MOHS kaplama, aracınızın parlaklığını ve korumasını maksimuma çıkarır.",
-		image: "/q2-ceramic.webp",
-		button: {
-			label: "MOHS'U KEŞFET",
-			to: "/products/q2-mohs",
-		},
-	},
-	{
-		title: "Q2 PURE KAPLAMA",
-		description:
-			"Saf SiO₂ teknolojisi ile uzun ömürlü ve etkili koruma. PURE kaplama, aracınızın yüzeyini çevresel etkilere karşı korur.",
-		image: "/q2-ceramic.webp",
-		button: {
-			label: "PURE'U KEŞFET",
-			to: "/products/q2-pure",
-		},
-	},
+	}
+	
 ]
 
 const ProductUsages = () => {
@@ -50,9 +31,30 @@ const ProductUsages = () => {
 							xs={12}
 							key={product.title}
 							alignItems="center"
+							sx={{ position: 'relative', minHeight: { md: 640 } }}
 						>
+							{/* Background image on right side with animated Reveal */}
+							<Reveal y={1} delay={0.04}>
+								<Box
+									sx={{
+										position: 'absolute',
+										top: 0,
+										right: 0,
+										bottom: 0,
+										width: { xs: '100%', md: 1215 }, // 1.5x previous md width (810 * 1.5)
+										height: { xs: 640, md: '100%' },
+										zIndex: 0,
+										display: { xs: 'none', md: 'block' },
+										background: `url(${product.image}) no-repeat right center`,
+										backgroundSize: 'contain',
+										opacity: 1,
+										pointerEvents: 'none',
+										transition: 'transform 0.8s cubic-bezier(0.4,0,0.2,1)',
+									}}
+								/>
+							</Reveal>
 							{/* Left column: Text & Button */}
-							<Grid item xs={12} md={6}>
+							<Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
 								<Reveal y={18} delay={0.04}>
 									<Typography
 										variant="h3"
@@ -92,8 +94,8 @@ const ProductUsages = () => {
 									</Button>
 								</Reveal>
 							</Grid>
-							{/* Right column: Image */}
-							<Grid item xs={12} md={6} sx={{ display: "flex", justifyContent: "center" }}>
+							{/* Right column: Image for mobile only */}
+							<Grid item xs={12} md={6} sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'center', alignItems: 'center', zIndex: 1 }}>
 								<Reveal y={18} delay={0.08}>
 									<Box
 										component="img"
@@ -101,10 +103,9 @@ const ProductUsages = () => {
 										alt={product.title}
 										sx={{
 											width: { xs: "100%", md: 380 },
-											maxWidth: "100%",
+											maxWidth: "80%",
+											maxHeight: "%80",
 											borderRadius: 4,
-											boxShadow: "0 4px 32px rgba(50,57,86,0.08)",
-											background: "#fff",
 											objectFit: "cover",
 										}}
 									/>

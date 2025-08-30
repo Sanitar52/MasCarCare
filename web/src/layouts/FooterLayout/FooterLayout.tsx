@@ -8,7 +8,7 @@ const FooterLayout = ({ children }: FooterLayoutProps) => {
   return (
     <>
       {children}
-      <Box component="footer" sx={{ background: '#eaf2fb', py: 6, mt: 8 }}>
+      <Box component="footer" sx={{ background: '#eaf2fb', py: 6 }}>
         <Container>
           <Grid container spacing={4} alignItems="center" justifyContent="center">
             {/* Left column: Logo, slogan, copyright */}

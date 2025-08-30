@@ -57,7 +57,7 @@ const ProductSpecifications = () => {
         <Container sx={{ position: 'relative', zIndex: 1 }}>
           <Reveal>
             <Typography variant="subtitle2" sx={{ fontWeight: 400, mb: 10, fontFamily: 'sans-serif', color: "#323956", letterSpacing: 3.25, }} align="center"  >
-              THE MASCARCARE WAY
+              ARDINA CAR CARE
             </Typography>
           </Reveal>
           <Reveal delay={0.08}>
@@ -66,17 +66,15 @@ const ProductSpecifications = () => {
               sx={{ fontWeight: 900, mb: 10, color: "#323956" }}
               align="center"
             >
-              WE STRIVE TO CREATE EXCEPTIONAL
-              CAR CARE PRODUCTS,
+              ARDINA CAR CARE OLARAK,
+
+              KALİTE,
+              DAYANIKLILIK
               <Box component="span" sx={{ fontSize: '0.3em', fontWeight: 500 }}>
-                {" IN TERMS OF "}
+                {"  VE  "}
               </Box>
-              QUALITY,<br />
-              DURABILITY
-              <Box component="span" sx={{ fontSize: '0.3em', fontWeight: 500 }}>
-                {" AND "}
-              </Box>
-              EASE OF USE.
+              KULLANIM KOLAYLIĞI SUNUYORUZ <br />
+              
             </Typography>
           </Reveal>
           <Reveal delay={0.16}>
