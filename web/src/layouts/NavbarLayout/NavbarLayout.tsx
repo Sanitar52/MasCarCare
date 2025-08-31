@@ -24,8 +24,7 @@ type NavbarLayoutProps = { children?: React.ReactNode }
 // Use plain paths (works even if route helpers aren’t defined yet)
 const NAV = [
   { label: 'HAKKIMIZDA', to: '/about' },
-  { label: 'ÜRÜNLER', to: '/products' },
-  { label: 'ORTAKLIKLAR', to: '/technology' },       // adjust when you add a page
+  { label: 'ÜRÜNLER', to: '/products' },      // adjust when you add a page
   { label: 'BİZE ULAŞIN', to: '/contact' },
   { label: 'BLOG', to: '/contact' },
 ]

@@ -10,7 +10,7 @@ const products = [
 		image: "/asd.png", // örnek görsel yolu, kendi görsellerinizi ekleyin
 		button: {
 			label: "ÜRÜNÜ KEŞFET",
-			to: "/products/q2-ceramic",
+			to: "/products/",
 		},
 	}
 	

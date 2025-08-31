@@ -76,33 +76,51 @@ export default function ParallaxHero() {
         }}
       >
         <motion.div style={{ y: titleY as any, opacity: titleOpacity as any }}>
-          <Typography variant="h2" sx={{ fontWeight: 800, mb: 2, color: 'white', }} align="left">
-            ARDINA CARE, < br />
-            ARABA SEVENLER İÇİN
-          </Typography>
-          <Button component={Link} to="/products" variant="outlined"
+          <Typography
+            variant="h2"
             sx={{
-              mt: 4,
-              px: 4,
-              py: 2,
-              fontWeight: 800,
-              fontSize: 14,
-              color: 'white',
-              border: '2px solid white',
-              background: 'transparent',
-              borderRadius: 0,
-              boxShadow: 'none',
-              letterSpacing: 1,
-              transition: 'all 0.2s',
-              '&:hover': {
-                background: 'white',
-                color: 'black',
-                borderColor: 'white',
-              },
+              fontWeight: 900,
+              mb: 2,
+              color: 'transparent',
+              WebkitTextStroke: '1px #fff', // white outline
+              textShadow: '0 0 16px rgba(0,0,0,0.18)',
+              fontSize: { xs: '2.1rem', sm: '2.8rem', md: '3.2rem' },
+              lineHeight: 1.1,
+              letterSpacing: 1.5,
+              display: 'inline-block',
+              background: 'none',
+              px: 2,
+              borderRadius: 2,
             }}
+            align="left"
           >
-            ARDINA CARE'I KEŞFET
-          </Button>
+            ARDINA <span style={{ color: 'transparent', WebkitTextStroke: '1px #fff' }}>CARE</span>,<br />
+            MOTOR <span style={{ color: 'transparent', WebkitTextStroke: '1px #fff' }}>GÜVENCENİZ</span>
+          </Typography>
+          <Box sx={{ mt: 4, display: 'flex', justifyContent: 'flex-start' }}>
+            <Button component={Link} to="/products" variant="outlined"
+              sx={{
+                px: 4,
+                py: 2,
+                fontWeight: 800,
+                fontSize: 14,
+                color: 'white',
+                border: '2px solid white',
+                background: 'transparent',
+                borderRadius: 0,
+                boxShadow: 'none',
+                letterSpacing: 1,
+                transition: 'all 0.2s',
+                '&:hover': {
+                  background: 'white',
+                  color: 'black',
+                  borderColor: 'white',
+                },
+              }}
+            >
+              ARDINA CARE'I KEŞFET
+            </Button>
+          </Box>
         </motion.div>
       </Container>
 

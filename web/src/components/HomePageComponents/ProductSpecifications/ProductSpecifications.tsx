@@ -10,7 +10,7 @@ const ProductSpecifications = () => {
         sx={{
           position: 'relative',
           py: { xs: 10, md: 10 },
-          background: '#eaf2fb',
+          background: 'linear-gradient(135deg, #1a237e 60%, #eaf2fb 100%)',
           overflow: 'hidden',
         }}
       >
@@ -56,21 +56,21 @@ const ProductSpecifications = () => {
 
         <Container sx={{ position: 'relative', zIndex: 1 }}>
           <Reveal>
-            <Typography variant="subtitle2" sx={{ fontWeight: 400, mb: 10, fontFamily: 'sans-serif', color: "#323956", letterSpacing: 3.25, }} align="center"  >
+            <Typography variant="subtitle2" sx={{ fontWeight: 100, mb: 10, fontFamily: 'sans-serif', color: "#eaf2fb", letterSpacing: 3.25, }} align="center"  >
               ARDINA CAR CARE
             </Typography>
           </Reveal>
           <Reveal delay={0.08}>
             <Typography
-              variant="h2"
-              sx={{ fontWeight: 900, mb: 10, color: "#323956" }}
+              variant="h3"
+              sx={{ fontWeight: 900, mb: 10, color: "#fff" }}
               align="center"
             >
               ARDINA CAR CARE OLARAK,
 
               KALİTE,
               DAYANIKLILIK
-              <Box component="span" sx={{ fontSize: '0.3em', fontWeight: 500 }}>
+              <Box component="span" sx={{ fontSize: '0.3em', fontWeight: 500, color: '#eaf2fb' }}>
                 {"  VE  "}
               </Box>
               KULLANIM KOLAYLIĞI SUNUYORUZ <br />
@@ -88,17 +88,17 @@ const ProductSpecifications = () => {
                   py: 3,
                   fontWeight: 800,
                   fontSize: 16,
-                  color: '#323232',
-                  border: '2px solid #323323',
+                  color: '#fff',
+                  border: '2px solid #eaf2fb',
                   background: 'transparent',
                   borderRadius: 0,
                   boxShadow: 'none',
                   letterSpacing: 0.1,
                   transition: 'all 0.2s',
                   '&:hover': {
-                    background: '#323956',
-                    color: '#fff',
-                    borderColor: '#323956',
+                    background: '#eaf2fb',
+                    color: '#1a237e',
+                    borderColor: '#eaf2fb',
                   },
                 }}
               >
@@ -116,8 +116,8 @@ const ProductSpecifications = () => {
               ].map(([title, text], i) => (
                 <Grid item xs={12} md={6} key={title}>
                   <Reveal y={28} delay={i * 0.06}>
-                    <Typography variant="h5" sx={{ fontWeight: 800, mb: 1, color: '#323232' }}>{title}</Typography>
-                    <Typography sx={{ opacity: 0.8 }}>{text}</Typography>
+                    <Typography variant="h5" sx={{ fontWeight: 800, mb: 1, color: '#eaf2fb' }}>{title}</Typography>
+                    <Typography sx={{ opacity: 0.9, color: '#fff' }}>{text}</Typography>
                   </Reveal>
                 </Grid>
               ))}
