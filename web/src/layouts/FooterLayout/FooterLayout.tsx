@@ -28,20 +28,20 @@ const FooterLayout = ({ children }: FooterLayoutProps) => {
               {/* Copyright row */}
               <Box>
                 <Typography sx={{ color: '#323956', opacity: 0.8, fontSize: 15 }}>
-                  © 2025 MasCarCare. Bütün hakları saklıdır.
+                  © 2025 Mas Car Care. Bütün hakları saklıdır.
                 </Typography>
               </Box>
             </Grid>
             {/* Middle column: Example content */}
             <Grid item xs={12} md={4} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-              <Typography variant="h6" align='center' sx={{ fontWeight: 700, mb: 2, color: '#323956' }}>Bölüm 2</Typography>
-              <Typography sx={{ color: '#323956', opacity: 0.8, textAlign: 'center' }}>Daha uzun bir içerik örneği. Burada iletişim, linkler veya başka bilgiler olabilir.</Typography>
+              <Typography variant="h6" align='center' sx={{ fontWeight: 700, mb: 2, color: '#323956' }}>MAŞ OTOMOTİV SAN. TİC. LTD. ŞTİ.</Typography>
+              <Typography sx={{ color: '#323956', opacity: 0.8, textAlign: 'center' }}>Cumhuriyet Mah. 1641 Sok. No: 6/B Yenişehir / MERSİN</Typography>
             </Grid>
             {/* Right column: Example content */}
             <Grid item xs={12} md={4} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end' }}>
               <Box sx={{ width: '100%', maxWidth: 320 }}>
-                <Typography variant="h6" align="center" sx={{ fontWeight: 700, mb: 2, color: '#323956' }}>Bölüm 3</Typography>
-                <Typography sx={{ color: '#323956', opacity: 0.8, textAlign: 'center' }}>Kısa içerik.</Typography>
+                <Typography variant="h6" align="center" sx={{ fontWeight: 700, mb: 2, color: '#323956' }}>GSM: 0501 325 00 22 <br /> Tel: 0324 325 00 22</Typography>
+                <Typography sx={{ color: '#323956', opacity: 0.8, textAlign: 'center' }}>info@mascarcare.com www.mascarcare.com</Typography>
               </Box>
             </Grid>
           </Grid>

@@ -76,11 +76,9 @@ export default function ParallaxHero() {
         }}
       >
         <motion.div style={{ y: titleY as any, opacity: titleOpacity as any }}>
-          <Typography variant="h2" sx={{ fontWeight: 900, mb: 2, color: 'white', }} align="left">
-            MASCARCARE, ARABA SEVENLER İÇİN ÜRÜNLER YARATIR
-          </Typography>
-          <Typography sx={{ opacity: 0.95, mb: 3, maxWidth: 680, color: 'white' }}>
-            Hidrofobik, dayanılır, profesyoneller ve amatörler için yaratıldı.
+          <Typography variant="h2" sx={{ fontWeight: 800, mb: 2, color: 'white', }} align="left">
+            ARDINA CARE, < br />
+            ARABA SEVENLER İÇİN
           </Typography>
           <Button component={Link} to="/products" variant="outlined"
             sx={{
@@ -103,7 +101,7 @@ export default function ParallaxHero() {
               },
             }}
           >
-            MASCARCARE'I KEŞFET
+            ARDINA CARE'I KEŞFET
           </Button>
         </motion.div>
       </Container>

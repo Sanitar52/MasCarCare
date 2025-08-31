@@ -102,7 +102,7 @@ const ProductSpecifications = () => {
                   },
                 }}
               >
-                MASCARCARE'I KEŞFET
+                ARDINA CARE'I KEŞFET
               </Button>
             </Box>
           </Reveal>
@@ -110,9 +110,9 @@ const ProductSpecifications = () => {
           <Box sx={{ display: 'flex', justifyContent: 'center', mb: 10 }}>
             <Grid container spacing={4}>
               {[
-                ['Yüksek hidrofobi', 'Su damlaları yüzeyden hızla kayar.'],
-                ['SiO₂ seramik kaplama', 'Yıllar içinde ölçülen dayanıklı koruma.'],
-                ['UV & kimyasal direnç', 'Sert ortamlara karşı koruma sağlar.'],
+                ['Motor Sağlığı', 'Motorun vuruntulu çalışmasını düzeltir ve performansını arttırır.'],
+                ['Katalizör, (DPF), (BPF)', 'Benzin ve Dizel Partikül Filtre gibi hassas motor bileşenlerinin ömrünü uzatır.'],
+                ['Benzin LPGli ve Dizel Araçlarda', 'Egzoz emisyonunu kabul edilen en düşük değerlere düşürür.'],
               ].map(([title, text], i) => (
                 <Grid item xs={12} md={6} key={title}>
                   <Reveal y={28} delay={i * 0.06}>

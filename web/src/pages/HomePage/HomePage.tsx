@@ -20,11 +20,11 @@ export default function HomePage() {
       <ProductUsages />
 
       {/* 4) CTA (görünümde ortaya çıkar; tekrar ziyaretlerde yeniden oynar) */}
-      <Box component="section" sx={{ py: { xs: 12, md: 20 } }}>
+      <Box component="section" sx={{ py: { xs: 12, md: 20 }, background: 'linear-gradient(135deg, #1a237e 60%, #fff 100%)' }}>
         <Container sx={{ textAlign: 'center' }}>
           <Reveal>
-            <Typography variant="h3" sx={{ fontWeight: 900, mb: 2 }}>
-              Kaplamaya hazır mısınız?
+            <Typography variant="h3" sx={{ fontWeight: 900, mb: 2, color: 'white' }}>
+              Motorunuzu Koruyun, Performansını Artırın
             </Typography>
           </Reveal>
           <Reveal delay={0.12}>

@@ -20,7 +20,7 @@ const ProductUsages = () => {
 	return (
 		<Box
 			component="section"
-			sx={{ py: { xs: 10, md: 10 }, background: "#eaf2fb" }}
+			sx={{ py: { xs: 10, md: 4 }, background: "#eaf2fb" }}
 		>
 			<Container>
 				<Grid container spacing={8}>
