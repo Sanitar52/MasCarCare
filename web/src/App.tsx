@@ -13,7 +13,7 @@ interface AppProps {
 
 const App = ({ children }: AppProps) => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+    <RedwoodProvider titleTemplate="%PageTitle | MasCarCare">
       <RedwoodApolloProvider>{children}</RedwoodApolloProvider>
     </RedwoodProvider>
   </FatalErrorBoundary>

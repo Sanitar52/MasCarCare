@@ -6,10 +6,12 @@ import ParallaxHero from 'src/components/ParallaxHero'
 import Reveal from 'src/components/Reveal'
 import ProductSpecifications from 'src/components/HomePageComponents/ProductSpecifications/ProductSpecifications'
 import ProductUsages from 'src/components/HomePageComponents/ProductUsages/ProductUsages'
+import { Metadata } from '@redwoodjs/web'
 
 export default function HomePage() {
   return (
     <>
+    <Metadata title="Anasayfa" description="Mascarcare Anasayfası" />
       {/* 1) Tam ekran video hero */}
       <ParallaxHero />
 
