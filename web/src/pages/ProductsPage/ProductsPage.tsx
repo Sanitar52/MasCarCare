@@ -20,6 +20,10 @@ const ProductsPage = () => {
     <>
       <Metadata title="Ürünler" description="Ürünler sayfası" />
       <Box sx={{ background: 'linear-gradient(135deg, #1a237e 60%, #eaf2fb 100%)', minHeight: '100vh', py: 10 }}>
+        {/* Ardina product image at the top, now responsive width */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 6 }}>
+          <Box component="img" src="/productmore.png" alt="Ardina Product" sx={{ width: { xs: '90%', sm: 620, md: 840 }, maxWidth: 1200, height: 'auto', borderRadius: 3, boxShadow: '0 4px 24px rgba(26,35,126,0.13)', background: 'rgba(255,255,255,0.12)', p: 1, objectFit: 'contain', display: 'block' }} />
+        </Box>
         <Container maxWidth="md" sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', gap: 8 }}>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', mb: { xs: 6, md: 0 }, position: 'relative' }}>
             {/* Premium SVG accent and lines behind image */}

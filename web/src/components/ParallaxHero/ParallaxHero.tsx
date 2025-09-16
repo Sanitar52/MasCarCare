@@ -44,7 +44,7 @@ export default function ParallaxHero() {
       <Box
         component="video"
         ref={videoRef}
-        src="/hero.mp4"
+        src="/test.mp4"
         autoPlay
         muted
         loop

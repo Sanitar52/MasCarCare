@@ -7,7 +7,7 @@ const products = [
 		title: "DPF, BPF, KATALİZÖR, EGR, TURBO, MANİFOLD TEMİZLEYİCİ 68334",
 		description:
 			"Turboşarz'lı ve turboşarz'sız tüm benzinli, lpg'li ve dizel motorlarda güvenle kullanılır.",
-		image: "/asd.png", // örnek görsel yolu, kendi görsellerinizi ekleyin
+		image: "/ardinaProduct.png", // örnek görsel yolu, kendi görsellerinizi ekleyin
 		button: {
 			label: "ÜRÜNÜ KEŞFET",
 			to: "/products/",
