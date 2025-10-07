@@ -52,7 +52,14 @@ export default function ParallaxHero() {
         preload="auto"
         onLoadedMetadata={onLoadedMetadata}
         onTimeUpdate={onTimeUpdate}
-        sx={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'fill',
+            backgroundColor: 'black', // fallback, but should be covered by video
+          }}
       />
 
       {/* Dark overlay for readability (static) */}
