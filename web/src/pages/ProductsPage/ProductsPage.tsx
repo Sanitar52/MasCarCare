@@ -77,7 +77,7 @@ const ProductsPage = () => {
                 </Typography>
               ))}
             </Box>
-            <Button component={Link} to="/contact" variant="contained" sx={{ background: '#1a237e', color: '#fff', fontWeight: 800, px: 4, py: 2, borderRadius: 2, boxShadow: 'none', letterSpacing: 1, mt: 2, '&:hover': { background: '#283593' } }}>
+            <Button component={Link} to="/manual" variant="contained" sx={{ background: '#1a237e', color: '#fff', fontWeight: 800, px: 4, py: 2, borderRadius: 2, boxShadow: 'none', letterSpacing: 1, mt: 2, '&:hover': { background: '#283593' } }}>
               Kullanım Talimatına Bak
             </Button>
           </Box>

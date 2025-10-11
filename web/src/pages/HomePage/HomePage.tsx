@@ -2,21 +2,39 @@ import React from 'react'
 import { Box, Container, Typography, Button } from '@mui/material'
 import { Grid } from '@mui/material'
 import { Link } from '@redwoodjs/router'
+
 import ParallaxHero from 'src/components/ParallaxHero'
 import Reveal from 'src/components/Reveal'
 import ProductSpecifications from 'src/components/HomePageComponents/ProductSpecifications/ProductSpecifications'
 import ProductUsages from 'src/components/HomePageComponents/ProductUsages/ProductUsages'
+import ResultComponent from 'src/components/ResultComponent/ResultComponent'
 import { Metadata } from '@redwoodjs/web'
 
 export default function HomePage() {
+  const resultRef = React.useRef<HTMLDivElement>(null);
+  // ...existing code...
+  // Handler to be passed to ParallaxHero
+  const handleVideoEnd = () => {
+    // Scroll to result section after video ends
+    setTimeout(() => {
+      if (resultRef.current) {
+        resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 400); // slight delay for UX
+  };
+
   return (
     <>
-    <Metadata title="Anasayfa" description="Mascarcare Anasayfası" />
+      <Metadata title="Anasayfa" description="Mascarcare Anasayfası" />
       {/* 1) Tam ekran video hero */}
-      <ParallaxHero />
+      <ParallaxHero onVideoEnd={handleVideoEnd} />
+
+      {/* Sonuç ekranı - shown after video ends, auto scrolls here */}
+      <div ref={resultRef} />
+      <ResultComponent />
 
       {/* 2) Özellik vurguları (serbest kaydırma, görünümde ortaya çıkma) */}
-      <ProductSpecifications  />
+      <ProductSpecifications />
 
       {/* 3) Ürünler grid (kaydırınca ortaya çıkar) */}
       <ProductUsages />
@@ -45,5 +63,5 @@ export default function HomePage() {
         </Container>
       </Box>
     </>
-  )
+  );
 }

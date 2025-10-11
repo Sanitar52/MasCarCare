@@ -12,7 +12,7 @@ function formatTime(t: number) {
   return `${m}:${s}`
 }
 
-export default function ParallaxHero() {
+export default function ParallaxHero({ onVideoEnd, replay }: { onVideoEnd?: () => void, replay?: boolean }) {
   const sectionRef = React.useRef<HTMLDivElement>(null)
   const videoRef = React.useRef<HTMLVideoElement>(null)
 
@@ -27,6 +27,7 @@ export default function ParallaxHero() {
   // ---- Video progress state
   const [duration, setDuration] = React.useState(0)
   const [current, setCurrent] = React.useState(0)
+  const [videoEnded, setVideoEnded] = React.useState(false)
   const progress = duration ? Math.min(current / duration, 1) : 0
 
   const onLoadedMetadata = () => {
@@ -36,6 +37,22 @@ export default function ParallaxHero() {
   const onTimeUpdate = () => {
     const v = videoRef.current
     if (v) setCurrent(v.currentTime)
+    // If video ended, call callback
+    if (v && v.currentTime >= v.duration - 0.1) {
+      if (!videoEnded) {
+        setVideoEnded(true)
+        if (onVideoEnd) onVideoEnd();
+      }
+    }
+  }
+
+  // Replay handler
+  const handleReplay = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+      setVideoEnded(false);
+    }
   }
 
   return (
@@ -44,23 +61,39 @@ export default function ParallaxHero() {
       <Box
         component="video"
         ref={videoRef}
-        src="/sonuc.mp4"
+        src="/sonuc2.mp4"
         autoPlay
         muted
-        loop
+        loop={false}
         playsInline
         preload="auto"
         onLoadedMetadata={onLoadedMetadata}
         onTimeUpdate={onTimeUpdate}
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'fill',
-            backgroundColor: 'black', // fallback, but should be covered by video
-          }}
+        sx={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
       />
+
+      {/* Replay button overlay only on hero section */}
+      {videoEnded && (
+        <Box sx={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10,
+          pointerEvents: 'auto',
+          background: 'rgba(0,0,0,0.32)',
+        }}>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{ fontSize: 22, px: 6, py: 2, fontWeight: 700, borderRadius: 2, boxShadow: 3 }}
+            onClick={handleReplay}
+          >
+            Videoyu Tekrar İzle
+          </Button>
+        </Box>
+      )}
 
       {/* Dark overlay for readability (static) */}
       <Box
@@ -93,7 +126,7 @@ export default function ParallaxHero() {
               textShadow: '0 0 16px rgba(0,0,0,0.18)',
               fontSize: { xs: '2.1rem', sm: '2.8rem', md: '3.2rem' },
               lineHeight: 1.1,
-              letterSpacing: 1.5,
+              letterSpacing: 1.7,
               display: 'inline-block',
               background: 'none',
               px: 2,

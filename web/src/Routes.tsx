@@ -11,6 +11,7 @@ const Routes = () => (
   <Router>
     <Set wrap={NavbarLayout}>
       <Route path="/" page={HomePage} name="home" />
+      <Route path="/manual" page={ManualPage} name="manual" />
       <Route path="/products" page={ProductsPage} name="products" />
       <Route path="/technology" page={TechnologyPage} name="technology" />
       <Route path="/about" page={AboutPage} name="about" />
